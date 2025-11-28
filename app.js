@@ -5,11 +5,11 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import { routes } from "./src/routes/index.js";
 
-const PORT = 3004;
+const PORT = process.env.PORT;
 const app = express();
 
 const corsOptions = {
-  origin: `https://localhost:${PORT}`,
+  origin: `http://localhost:${PORT}`,
   credentials: true,
 };
 
@@ -22,7 +22,7 @@ app.use("/api", routes)
 app.listen(PORT, async () => {
   try {
     DBStart();
-    console.log(`Servidor encendido y corriendo en https://localhost:${PORT}`);
+    console.log(`Servidor activo y funcional corriendo en: http://localhost:${PORT}`);
   } catch (error) {
     console.log("Error al encender el servidor" + error);
   }
