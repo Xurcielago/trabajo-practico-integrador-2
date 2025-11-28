@@ -9,7 +9,7 @@ const PORT = process.env.PORT;
 const app = express();
 
 const corsOptions = {
-  origin: `http://localhost:${PORT}`,
+  origin: `https://localhost:${PORT}`,
   credentials: true,
 };
 
@@ -22,7 +22,7 @@ app.use("/api", routes)
 app.listen(PORT, async () => {
   try {
     DBStart();
-    console.log(`Servidor activo y funcional corriendo en: http://localhost:${PORT}`);
+    console.log(`Servidor activo y funcional corriendo en: https://localhost:${PORT}`);
   } catch (error) {
     console.log("Error al encender el servidor" + error);
   }
